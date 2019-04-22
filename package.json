@@ -6,6 +6,7 @@
   "scripts": {
     "start": "npm run build && node dist/server.js",
     "build": "tsc",
+    "postinstall": "npm run build",
     "watch-ts": "tsc -w",
     "watch-node": "nodemon dist/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\"",
@@ -23,5 +24,8 @@
     "nodemon": "^1.18.11",
     "normalize-registry-metadata": "^1.1.2",
     "socket.io": "^2.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.4"
   }
 }
