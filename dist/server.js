@@ -44,7 +44,7 @@ io.on("connection", function (socket) {
         socket.emit("update", message);
     });
 });
-const server = http.listen(3000, function () {
+const server = http.listen(process.env.PORT || 3000, function () {
     console.log("listening on *:3000");
 });
 //# sourceMappingURL=server.js.map
