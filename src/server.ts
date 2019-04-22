@@ -11,7 +11,7 @@ var changes = new ChangesStream({
   db: db,
   include_docs: true, 
   since: 'now',
-  filter: (doc) => !!doc.name
+  filter: (doc: any) => !!doc.name
 });
 
 const app = express();
@@ -30,7 +30,7 @@ app.get("/", (req: any, res: any) => {
 // a websocket, log that a user has connected
 io.on("connection", function(socket: any) {
 
-  changes.on('data', function(change) {
+  changes.on('data', function(change: any) {
     var doc = Normalize(change.doc)
   
     if(!doc.versions) return;
